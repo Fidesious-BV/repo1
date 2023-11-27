@@ -75,7 +75,7 @@ jobs:
         uses: microsoft/AL-Go-Actions/CreateApp@v4.0
         with:
           shell: powershell
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.ReadSecrets.outputs.TokenForPush }}
           parentTelemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
           project: ${{ github.event.inputs.project }}
           type: ${{ env.type }}
